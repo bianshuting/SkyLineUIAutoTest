@@ -5,6 +5,7 @@ __author__ = 'admin'
 import unittest
 import datetime
 import time
+import os
 from lib import HTMLTestRunner
 from lib import configuration
 from lib import sendEmail
@@ -36,6 +37,8 @@ def generateReport():
 
     format_time = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
     report_name = report_path + format_time + "_result.html"
+    if not os.path.exists(report_name):
+        os.system(r"touch {}".format(report_name))
     fp = open(report_name, 'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'测试报告', description=u'用例执行结果')
     runner.run(createTestSuite())
