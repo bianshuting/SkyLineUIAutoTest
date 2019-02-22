@@ -1,2 +1,2 @@
 #!/bin/bash
-python2.7 /usr/local/MyPythonAutoTest/testcases/run.py
+python2.7 /usr/local/TestMyPython/testcases/run.py
