@@ -6,6 +6,7 @@ RUN apt-get install -y vim
 
 ADD ./MyPythonAutoTest /usr/local/MyPythonAutoTest
 ADD ./requirements.txt /usr/local
+ADD run.sh /root
 
 WORKDIR /usr/local
 RUN pip install -r requirements.txt
