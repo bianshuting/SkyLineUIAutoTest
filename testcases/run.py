@@ -48,6 +48,7 @@ def sendEmailInfo():
     cfg_file = "../config/common.ini"
     cfg.fileConfig(cfg_file)
     report_path = cfg.getValue('COMMON', 'report_path')
+    print('report_path:' + report_path)
     latest_report = sendEmail.new_report(report_path)
     sendEmail.send_file(latest_report)
 
