@@ -1,2 +1,3 @@
 #!/bin/bash
-python2.7 /usr/local/TestMyPython/testcases/run.py
+cd /usr/local/TestMyPython/testcases
+python2.7 run.py
