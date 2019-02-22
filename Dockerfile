@@ -17,6 +17,9 @@ ADD testcases.tar.gz /usr/local/TestMyPython
 ADD xml.tar.gz /usr/local/TestMyPython
 ADD run.sh /root
 
+WORKDIR /root
+RUN chmod +x run.sh
+
 ENV PYTHONPATH /usr/local/TestMyPython
 ENV PATH $PATH:$PYTHONPATH
 
