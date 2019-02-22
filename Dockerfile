@@ -8,6 +8,12 @@ ADD ./MyPythonAutoTest /usr/local/MyPythonAutoTest
 ADD ./requirements.txt /usr/local
 ADD run.sh /root
 
+WORKDIR /root
+RUN chmod 777 run.sh
+
+WORKDIR /usr/local
+RUN chmod 777 requirements.txt
+
 WORKDIR /usr/local
 RUN pip install -r requirements.txt
 
