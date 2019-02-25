@@ -1,8 +1,5 @@
-FROM python:2.7
+FROM bianshuting/ubuntu_python27
 USER root
-
-RUN apt-get update
-RUN apt-get install -y vim
 
 WORKDIR /usr/local
 RUN mkdir TestMyPython
@@ -19,7 +16,3 @@ ADD run.sh /root
 
 WORKDIR /root
 RUN chmod +x run.sh
-
-ENV PYTHONPATH /usr/local/TestMyPython
-ENV PATH $PATH:$PYTHONPATH
-
