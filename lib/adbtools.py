@@ -45,25 +45,25 @@ class AdbTools(object):
         判断是否设置环境变量ANDROID_HOME
         :return:
         """
-        if "ANDROID_HOME" in os.environ:
+        if "SDK_HOME" in os.environ:
             if self.__system is 'Windows':
-               path=os.path.join(os.environ["ANDROID_HOME"],"platform-tools","adb.exe")
+               path=os.path.join(os.environ["SDK_HOME"],"platform-tools","adb.exe")
                if os.path.exists(path):
                    self.__command=path
                else:
                     raise EnvironmentError(
-                        "Adb not found in $ANDROID_HOME path: %s." % os.environ["ANDROID_HOME"])
+                        "Adb not found in $SDK_HOME path: %s." % os.environ["SDK_HOME"])
             else:
-                path=os.path.join(os.environ["ANDROID_HOME"],"platform-tools","adb")
+                path=os.path.join(os.environ["SDK_HOME"],"platform-tools","adb")
                 if os.path.exists(path):
                     self.__command = path
                 else:
                     raise EnvironmentError(
-                        "Adb not found in $ANDROID_HOME path: %s." % os.environ["ANDROID_HOME"])
+                        "Adb not found in $SDK_HOME path: %s." % os.environ["SDK_HOME"])
 
         else:
             raise EnvironmentError(
-                        "Adb not found in $ANDROID_HOME path: %s." % os.environ["ANDROID_HOME"])
+                        "Adb not found in $SDK_HOME path: %s." % os.environ["SDK_HOME"])
 
     def __connection_devices(self):
         """
