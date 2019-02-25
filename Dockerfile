@@ -1,4 +1,5 @@
-FROM bianshuting/ubuntu_python27
+FROM my_ubuntu_python
+
 USER root
 
 WORKDIR /usr/local
