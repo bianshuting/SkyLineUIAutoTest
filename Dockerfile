@@ -1,10 +1,6 @@
-FROM my_ubuntu_python
+FROM bianshuting/my_ubuntu_python
 
 USER root
-
-RUN apt-get update
-RUN apt-get upgrade
-RUN apt-get install usbutils
 
 WORKDIR /usr/local
 RUN mkdir TestMyPython
@@ -17,7 +13,6 @@ ADD report.tar.gz /usr/local/TestMyPython
 ADD screenshot.tar.gz /usr/local/TestMyPython
 ADD testcases.tar.gz /usr/local/TestMyPython
 ADD xml.tar.gz /usr/local/TestMyPython
-ADD run.sh /root
 
-WORKDIR /root
-RUN chmod +x run.sh
+ENV MY_PYTHON /usr/local/TestMyPython
+ENV PATH $PATH:$MY_PYTHON
