@@ -2,6 +2,10 @@ FROM my_ubuntu_python
 
 USER root
 
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install usbutils
+
 WORKDIR /usr/local
 RUN mkdir TestMyPython
 
