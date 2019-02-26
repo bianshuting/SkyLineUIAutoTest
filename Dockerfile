@@ -14,5 +14,5 @@ ADD screenshot.tar.gz /usr/local/TestMyPython
 ADD testcases.tar.gz /usr/local/TestMyPython
 ADD xml.tar.gz /usr/local/TestMyPython
 
-ENV MY_PYTHON /usr/local/TestMyPython
-ENV PATH $PATH:$MY_PYTHON
+ENV PYTHONPATH /usr/local/TestMyPython
+ENV PATH $PATH:$PYTHONPATH
